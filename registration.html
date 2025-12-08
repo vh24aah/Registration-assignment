@@ -304,26 +304,37 @@
 
                         <div class="flex items-center mt-6">
                             <button type="button"
-                                    class="block flex-grow text-center p-4 low-contrast-button font-bold rounded-lg cursor-pointer shadow-md hover-shadow-lg transition duration-200 text-lg border border-indigo-800"
+                                    class="block flex-grow text-center p-4 font-bold rounded-lg cursor-pointer shadow-md hover-shadow-lg transition duration-200 text-lg"
+                                    style="background-color: #4338ca; color: #ffffff; border: 2px solid #1e1b4b;"
                                     onclick="register()">
-                                  Register Now
+                                Register Now
                             </button>
+
                             
                             <button type="button"
                                     aria-label="Delete"
-                                    class="p-4 ml-4 rounded-lg shadow-md" 
-                                    style="background-color: #b91c1c; transition: background-color 0.2s;"
+                                    class="p-4 ml-4 rounded-lg shadow-md"
+                                    style="background-color: #7f1d1d; color: #ffffff; transition: background-color 0.2s;"
                                     onclick="clearForm()"
-                                    onmouseover="this.style.backgroundColor='#991b1b'" 
-                                    onmouseout="this.style.backgroundColor='#b91c1c'">
-                                
-                                <span style="color: #ffffff; font-size: 22px; display:block;">&#x2715;</span>
-                                
+                                    onmouseover="this.style.backgroundColor='#991b1b'"
+                                    onmouseout="this.style.backgroundColor='#7f1d1d'">
+
+                                <span style="font-size: 22px; display: block;">&#x2715;</span>
+
                             </button>
+
+
                             
-                            <button class="bg-red-500 p-4 ml-4 rounded-lg shadow-md text-white" onclick="clearForm()" style="transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#dc2626'" onmouseout="this.style.backgroundColor='#ef4444'">
-                                &#x2715; 
+                            <button type="button"
+                                    aria-label="Delete"
+                                    class="p-4 ml-4 rounded-lg shadow-md text-white"
+                                    style="background-color: #7f1d1d; transition: background-color 0.2s;"
+                                    onclick="clearForm()"
+                                    onmouseover="this.style.backgroundColor='#991b1b'"
+                                    onmouseout="this.style.backgroundColor='#7f1d1d'">
+    
                             </button>
+
                         </div>
                         <div id="reg-status" class="mt-4 text-center text-green-600 font-bold hidden text-lg"></div>
                     </form>

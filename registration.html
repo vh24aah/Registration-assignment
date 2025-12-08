@@ -130,9 +130,9 @@
         }
         
         .low-contrast-button {
-            background-color: #a78bfa;
-            color: #e5e7eb;
-            border: none;
+            background-color: #4f46e5;
+            color: #ffffff;
+            
         }
 
         @media (min-width: 640px) {
@@ -303,13 +303,22 @@
                         </section>
 
                         <div class="flex items-center mt-6">
-                            <span class="block flex-grow text-center p-4 low-contrast-button font-bold rounded-lg cursor-pointer shadow-md hover-shadow-lg transition duration-200 text-lg"
-                                  onclick="register()">
+                            <button type="button"
+                                    class="block flex-grow text-center p-4 low-contrast-button font-bold rounded-lg cursor-pointer shadow-md hover-shadow-lg transition duration-200 text-lg border border-indigo-800"
+                                    onclick="register()">
                                   Register Now
-                            </span>
+                            </button>
                             
-                            <button class="bg-gray-300 p-4 ml-4 rounded-lg shadow-md" style="transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#9ca3af'" onmouseout="this.style.backgroundColor='#d1d5db'">
-                                <span style="color: #4b5563;">&#x270E;</span> 
+                            <button type="button"
+                                    aria-label="Delete"
+                                    class="p-4 ml-4 rounded-lg shadow-md" 
+                                    style="background-color: #b91c1c; transition: background-color 0.2s;"
+                                    onclick="clearForm()"
+                                    onmouseover="this.style.backgroundColor='#991b1b'" 
+                                    onmouseout="this.style.backgroundColor='#b91c1c'">
+                                
+                                <span style="color: #ffffff; font-size: 22px; display:block;">&#x2715;</span>
+                                
                             </button>
                             
                             <button class="bg-red-500 p-4 ml-4 rounded-lg shadow-md text-white" onclick="clearForm()" style="transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#dc2626'" onmouseout="this.style.backgroundColor='#ef4444'">

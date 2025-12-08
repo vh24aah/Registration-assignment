@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -130,9 +130,9 @@
         }
         
         .low-contrast-button {
-            background-color: #4f46e5;
-            color: #ffffff;
-            
+            background-color: #a78bfa;
+            color: #e5e7eb;
+            border: none;
         }
 
         @media (min-width: 640px) {
@@ -182,10 +182,9 @@
 
     <header class="bg-brand-purple text-white py-5 shadow-xl">
         <div class="max-w-6xl mx-auto px-4 sm-px-6 lg-px-8 flex justify-between items-center">
-            <h1 class="text-4xl font-extrabold tracking-tight">2025 Registration</h1>
+            <h2 class="text-4xl font-extrabold tracking-tight">2025 Registration</h2>
             
             <button class="bg-indigo-600 hover-bg-indigo-700 p-2 rounded-full shadow-md text-white" onclick="console.log('Close button clicked');">
-                <span class="sr-only">Close</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -195,17 +194,11 @@
 
     <div class="bg-gray-200 shadow-md border-b border-gray-300">
         <div class="max-w-6xl mx-auto px-4 sm-px-6 lg-px-8 flex space-x-6">
-            <a href="#info" class="py-3 px-4 text-indigo-900 font-medium hover-bg-gray-300 rounded-t">
-                Conference Info
-            </a>
-            <a href="#schedule" class="py-3 px-4 text-indigo-900 font-medium hover-bg-gray-300 rounded-t">Schedule</a>
-            <a class="py-3 px-4 text-indigo-900 font-medium hover-bg-gray-300 rounded-t">Sponsors</a>
+            <a href="#info" class="py-3 px-4 text-brand-purple font-medium hover-bg-gray-300 rounded-t">Conference Info</a>
+            <a href="#schedule" accesskey="s" class="py-3 px-4 text-brand-purple font-medium hover-bg-gray-300 rounded-t">Schedule</a>
+            <a class="py-3 px-4 text-brand-purple font-medium hover-bg-gray-300 rounded-t">Sponsors</a>
         </div>
     </div>
-
-    <section id="schedule"></section>
-
-    <section id="info"></section>
 
     <table class="w-full max-w-6xl mx-auto layout-table" id="reg-table">
         <tbody>
@@ -214,10 +207,10 @@
                     <form onsubmit="return false;" id="reg-form" class="space-y-6">
                         
                         <section id="contact-details" class="bg-white p-6 rounded-xl shadow-lg">
-                            <h2 class="text-2xl font-semibold mb-6 text-brand-purple">1. Contact Details <span class="required-field"> (Required fields are in red)</span></h2>
+                            <h3 class="text-2xl font-semibold mb-6 text-brand-purple">1. Contact Details <span class="required-field"> (Required fields are in red)</span></h3>
                             
                             <div class="flex flex-col mb-4">
-                                <label for="full-name" class="mb-1 font-medium required field">Full Name </label>
+                                <label for="full-name" class="mb-1 font-medium required-field">Full Name</label>
                                 <input type="text" id="full-name" title="This field is mandatory" class="p-3 border border-gray-300 rounded-lg focus-ring-2 focus-ring-brand-purple" placeholder="Your name for the badge">
                             </div>
 
@@ -227,14 +220,14 @@
                             </div>
 
                             <div class="flex flex-col mb-4">
-                                <label for="email" class="mb-1 font-medium required field">Email Address</label>
+                                <label for="email" class="mb-1 font-medium required-field">Email Address</label>
                                 <input type="email" id="email" class="p-3 border border-gray-300 rounded-lg focus-ring-2 focus-ring-brand-purple" placeholder="Email (for ticket delivery)">
                             </div>
                             
-                            <p class="mt-1 text-sm text-gray-500"> We will only use this for conference-related updates. </p>
+                            <p class="mt-1 text-sm text-gray-500" tabindex="5">We will only use this for conference-related updates.</p>
                             
                             <div class="flex items-center space-x-2 pt-4">
-                                
+                                <label for="hidden-pref">Set hidden preference</label>
                                 <input type="hidden" id="hidden-pref" value="true">
                             </div>
 
@@ -244,9 +237,6 @@
                             <h3 class="text-2xl font-semibold mb-6 text-brand-purple">2. Ticket & Tracks</h3>
                             
                             <div class="flex flex-col mb-4">
-                                
-                                <label for="ticket-type" class="mb-1 font-medium">Ticket Type</label>
-                                
                                 <select id="ticket-type" class="p-3 border border-gray-300 rounded-lg focus-ring-2 focus-ring-brand-purple">
                                     <option value="">-- Select Ticket Type --</option>
                                     <option value="standard">Standard Pass ($599)</option>
@@ -255,9 +245,7 @@
                                 </select>
                             </div>
                             
-                            <p class="mb-3 font-medium block required-field" style="color: #7f1d1d;">
-                                select up to 3 preffered tracks:
-                            </p>
+                            <label class="mb-3 font-medium block required-field">Select up to 3 preferred tracks:</label>
 
                             <div id="track-list" class="space-y-2 border border-gray-300 p-3 rounded-lg">
                                 <div class="flex items-center space-x-2">
@@ -265,8 +253,8 @@
                                     <label for="ai-ml">AI & Machine Learning</label>
                                 </div>
                                 <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="cloud" class="h-4 w-4 text-brand-purple rounded">
-                                    <label for="cloud">Cloud Infrastructure</label>
+                                    <input type="checkbox" class="h-4 w-4 text-brand-purple rounded">
+                                    <span>Cloud Infrastructure</span>
                                 </div>
                                 <div class="flex items-center space-x-2">
                                     <input type="checkbox" id="security" class="h-4 w-4 text-brand-purple rounded">
@@ -274,12 +262,7 @@
                                 </div>
                             </div>
                             
-                            <p class="text-sm mt-4">Review the full 
-                                <a href="#pricing" target="_blank" class="underline" style="color:#1f2937; font-weight: 600;">
-                                    pricing details here
-                                </a> before selecting your ticket.
-                                before selecting your ticket.
-                            </p>
+                            <p class="text-sm mt-4">Review the full <a href="#pricing" target="_blank" class="text-brand-purple underline">pricing details here</a> before selecting your ticket.</p>
                         </section>
 
                         <section id="preferences" class="bg-white p-6 rounded-xl shadow-lg mt-6">
@@ -294,47 +277,36 @@
                             
                             <div class="space-y-3 mt-4">
                                 <h4 class="text-xl font-medium mb-3">Dietary Needs</h4>
-                                
-                            <fieldset style="border: none; padding: 0;">
-                                <legend class="text-xl font-medium mb-3">Dietary Needs</legend>    
-                                
                                 <div class="flex items-start space-x-3">
                                     <input type="radio" name="diet" id="diet-standard" value="standard" class="mt-1 h-4 w-4 text-brand-purple">
-                                    <label for="diet-standard" class="flex-1">Standard Meal</label>
+                                    <span>Standard Meal</span>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <input type="radio" name="diet" id="diet-vegan" value="vegan" class="mt-1 h-4 w-4 text-brand-purple">
                                     <label for="diet-vegan" class="flex-1">Vegan</label>
                                 </div>
-                            </fieldset>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <input type="checkbox" id="email-updates"name="email-updates" class="h-5 w-5 text-brand-purple rounded"> 
-                                    <label for="email-updates">I want to receive weekly email updates.</label>
+                                    <input type="checkbox" name="email-updates" class="h-5 w-5 text-brand-purple rounded"> 
+                                    <span>I want to receive weekly email updates.</span>
                                 </div>
                             </div>
 
                         </section>
 
                         <div class="flex items-center mt-6">
-                            <button type="button"
-                                    class="block flex-grow text-center p-4 font-bold rounded-lg cursor-pointer shadow-md hover-shadow-lg transition duration-200 text-lg"
-                                    style="background-color: #4338ca; color: #ffffff; border: 2px solid #1e1b4b;"
-                                    onclick="register()">
-                                Register Now
-                            </button>
-
+                            <span class="block flex-grow text-center p-4 low-contrast-button font-bold rounded-lg cursor-pointer shadow-md hover-shadow-lg transition duration-200 text-lg"
+                                  onclick="register()">
+                                  Register Now
+                            </span>
                             
-                            <button type="button" 
-                                    aria-label="Delete"
-                                    class="p-4 ml-4 rounded-lg shadow-md"
-                                    style="background-color:#7f1d1d; color:#ffffff; transition:background-color 0.2s;"
-                                    onclick="clearForm()"
-                                    onkeydown="if(event.key==='Enter' || event.key===' ') clearForm()">
-                                <span style="font-size:22px; display:block;">✕</span>
+                            <button class="bg-gray-300 p-4 ml-4 rounded-lg shadow-md" style="transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#9ca3af'" onmouseout="this.style.backgroundColor='#d1d5db'">
+                                <span style="color: #4b5563;">&#x270E;</span> 
                             </button>
-
-
+                            
+                            <button class="bg-red-500 p-4 ml-4 rounded-lg shadow-md text-white" onclick="clearForm()" style="transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#dc2626'" onmouseout="this.style.backgroundColor='#ef4444'">
+                                &#x2715; 
+                            </button>
                         </div>
                         <div id="reg-status" class="mt-4 text-center text-green-600 font-bold hidden text-lg"></div>
                     </form>
@@ -351,42 +323,24 @@
                         
                         <img src="https://placehold.co/300x150/6366f1/a5b4fc?text=Oct+14-16" alt="" class="rounded-lg shadow-md" style="width: 100%; height: auto; display: block;">
                         
-                        <img src="https://placehold.co/250x3/dddddd/dddddd" 
-                            alt=""
-                            role="presentation"
-                            style="display: block; margin: 15px auto; width: 90%;" >
-                            
+                        <img src="https://placehold.co/250x3/dddddd/dddddd" style="display: block; margin: 15px auto; width: 90%;" title="Divider">
                         
                         <p class="text-sm mt-3">
-                            For all terms and conditions, 
-                            <a href="/terms" class="text-brand-purple underline font-bold"
-                            style="color: #1e3a8a; font-weight: 700;">
-                            More Details
-                            </a>
+                            For all terms and conditions, <a href="/terms" class="text-brand-purple underline font-bold">More Details</a>.
                         </p>
                     </section>
                     
                     <section id="speaker-spotlight" class="bg-white p-6 rounded-xl shadow-lg mb-6">
                         <h3 class="text-2xl font-semibold mb-4 text-brand-purple">Keynote Speaker</h3>
                         <div class="flex flex-col items-center">
-                            <a href="#speaker-bio" 
-                                class="text-brand-purple underline font-bold"
-                                style="color: #4338ca; background-color: #ffffff;">
-                                    
-                                    <img src="https://placehold.co/150x150/1e3a8a/fde047?text=J.D."
-                                        alt="photo of keynote speaker J.D. Smith"
-                                        class="rounded-full shadow-md mb-2"
-                                        style="width: 150px; height: 150px; display: block;">
-
-                                    Read J.D. Smith's Bio
+                            <a href="#speaker-bio" class="text-brand-purple underline font-bold">
+                                <img src="https://placehold.co/150x150/1e3a8a/fde047?text=J.D." alt="picture" class="rounded-full shadow-md mb-2" style="width: 150px; height: 150px; display: block;">
+                                Read J.D. Smith's Bio
                             </a>
-
                             <p class="text-lg font-medium mt-2">J.D. Smith, CEO TechCorp</p>
                         </div>
                     </section>
                     
-                    <section id="speaker-bio"></section>
-
                     <section id="sponsor-info" class="bg-white p-6 rounded-xl shadow-lg">
                         <h3 class="text-2xl font-semibold mb-4 text-brand-purple">Our Sponsors</h3>
                         <div class="flex items-center space-x-2 mb-4">
@@ -406,7 +360,7 @@
         <div class="bg-white p-6 rounded-xl shadow-lg mt-6 border-l-8 border-brand-purple">
             <h3 class="text-2xl font-semibold mb-4 text-brand-purple">Conference Schedule Summary</h3>
             
-            <h3 class="text-lg font-medium mb-2 mt-4">Day 1 Highlights</h3>
+            <h6 class="text-lg font-medium mb-2 mt-4">Day 1 Highlights</h6>
 
             <table class="w-full text-left border-collapse border border-gray-200 mb-6 schedule-table">
                 <thead>
@@ -430,45 +384,25 @@
             <h4 class="text-xl font-medium mb-3">Watch Last Year's Promo</h4>
             <iframe width="100%" height="150" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
             
-            <p class="text-sm mt-3"> 
-                This section provides a brief overview of the conference structure. The full schedule is available via the link above. We highly recommend reviewing this information to ensure your session choices align with your professional development goals.
-            </p>
+            <p class="text-sm mt-3 justified-text">This section provides a brief overview of the conference structure. The full schedule is available via the link above. We highly recommend reviewing this information to ensure your session choices align with your professional development goals.</p>
             
-            <span class="text-sm font-bold cursor-pointer mt-4 block"
-                tabindex="0"
-                role="button"
-                onclick="console.log('Previous section clicked');"
-                onkeydown="if(event.key==='Enter' || event.key===' ') console.log('Previous section clicked');"
-                
-                style="color: #4338ca; background-color: #ffffff;">
+            <span class="text-sm font-bold text-brand-purple cursor-pointer mt-4 block" onclick="console.log('Previous section clicked');">
                 &lt; Previous Section
             </span>
-
         </div>
         
-        <a href="#top" class="sr-only">Back to top</a>
+        <a href="#top" style="display: block; height: 10px;"></a>
         
         <div class="flex flex-col space-y-2 mt-6">
             <h3 class="text-2xl font-semibold mb-2 text-brand-purple">Contact Us</h3>
-            <span onclick="console.log('Email support clicked');"
-                class="cursor-pointer"
-                tabindex="0"
-                role="button"
-                onclick="console.log('Email support clicked');"
-                onkeydown="if(event.key==='Enter' || event.key===' ') console.log('Email support clicked');"
-                style="color: #4338ca; background-color: #e5e7eb;">
-                Email Support Team
-            </span>
-
+            <span onclick="console.log('Email support clicked');" class="text-brand-purple underline cursor-pointer">Email Support Team</span>
         </div>
 
     </main>
 
     <footer class="bg-gray-900 text-gray-500 py-6 mt-8">
         <div class="max-w-6xl mx-auto text-center">
-            <p style="color: #ffffff; opacity: 1 !important;">
-                &copy; 2025 Tech Conference. All rights reserved.
-            </p>
+            <p>&copy; 2025 Tech Conference. All rights reserved.</p>
         </div>
     </footer>
     

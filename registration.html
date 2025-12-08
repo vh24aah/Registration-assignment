@@ -325,29 +325,15 @@
                             </button>
 
                             
-                            <button type="button"
-                                    aria-label="Delete"
-                                    class="p-4 ml-4 rounded-lg shadow-md"
+                            <button type="button" aria-label="Delete" class="p-4 ml-4 rounded-lg shadow-md"
                                     style="background-color: #7f1d1d; color: #ffffff; transition: background-color 0.2s;"
                                     onclick="clearForm()"
+                                    onkeydown="if(event.key==='Enter' || event.key===' ') clearForm()"
                                     onmouseover="this.style.backgroundColor='#991b1b'"
                                     onmouseout="this.style.backgroundColor='#7f1d1d'">
-
-                                <span style="font-size: 22px; display: block;">&#x2715;</span>
-
+                                <span style="font-size: 22px; display: block;">✕</span>
                             </button>
 
-
-                            
-                            <button type="button"
-                                    aria-label="Delete"
-                                    class="p-4 ml-4 rounded-lg shadow-md text-white"
-                                    style="background-color: #7f1d1d; transition: background-color 0.2s;"
-                                    onclick="clearForm()"
-                                    onmouseover="this.style.backgroundColor='#991b1b'"
-                                    onmouseout="this.style.backgroundColor='#7f1d1d'">
-    
-                            </button>
 
                         </div>
                         <div id="reg-status" class="mt-4 text-center text-green-600 font-bold hidden text-lg"></div>
